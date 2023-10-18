@@ -18,7 +18,7 @@ void	*ft_memset(void *s, int c, size_t n)
 		return (NULL);
 	while (n)
 	{
-		((unsigned char *)s)[n-1] = c;
+		((unsigned char *)s)[n - 1] = c;
 		n--;
 	}
 	return (s);
@@ -27,6 +27,6 @@ void	*ft_memset(void *s, int c, size_t n)
 /*int	main(void)
 {
 	char str[50] = "GeeksForGeeks is for programming geeks.";
-	ft_memset(&str[8], '.', 10);
+	ft_memset(str, '.', 10);
 	printf("%s", str);
 }*/

@@ -22,10 +22,10 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-/*int	main(void)
+/*int main(void)
 {
-	printf("%d", strlen("oi,bb") == ft_strlen("oi,bb"));
-	printf("%d", strlen("como vai?") == ft_strlen("como vai?"));
-	printf("%d", strlen("vc?") == ft_strlen("vc?"));
-	printf("%d", strlen("fica bem") == ft_strlen("fica bem"));
+  printf("%d", strlen("oi,bb") == ft_strlen("oi,bb"));
+  printf("%d", strlen("como vai?") == ft_strlen("como vai?"));
+  printf("%d", strlen("vc?") == ft_strlen("vc?"));
+  printf("%d", strlen("fica bem") == ft_strlen("fica bem"));
 }*/

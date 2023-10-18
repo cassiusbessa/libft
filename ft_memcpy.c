@@ -15,13 +15,13 @@
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t	i;
-	
+
 	if (!dest || !src)
-		return (NULL);	
+		return (NULL);
 	i = 0;
-	while(i < n)
+	while (i < n)
 	{
-		ft_memset(dest + i, ((unsigned char *)src)[i], 1);
+		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
 		i++;
 	}
 	return (dest);
@@ -33,6 +33,4 @@ int	main(void)
 	char src[50] = "GeeksForGeeks is for programming geeks.";
 	ft_memcpy(dest, src, 10);
 	printf("%s", dest);
-}
-		
-		
+}	
