@@ -1,36 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: caqueiro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 17:46:20 by caqueiro          #+#    #+#             */
-/*   Updated: 2023/10/17 17:46:21 by caqueiro         ###   ########.fr       */
+/*   Created: 2023/10/18 18:19:41 by caqueiro          #+#    #+#             */
+/*   Updated: 2023/10/18 18:19:43 by caqueiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 
-	if (!dest || !src)
-		return (NULL);
+	if (!dst || !size)
+		return (0);
 	i = 0;
-	while (i < n)
+	while (i + 1 < size && src[i])
 	{
-		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+		dst[i] = src[i];
 		i++;
 	}
-	return (dest);
+	if (i < size)
+		dst[i] = 0;
+	while (src[i])
+		i++;
+	return (i);
 }
 
 /*int	main(void)
 {
-	char dest[50];
-	char src[50] = "GeeksForGeeks is for programming geeks.";
-	ft_memcpy(dest, src, 10);
+	char dest[8];
+	char src[8] = "GeeksFor";
+	ft_strlcpy(dest, src, 10);
 	printf("%s", dest);
 }*/

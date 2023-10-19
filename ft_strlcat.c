@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: caqueiro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 17:46:20 by caqueiro          #+#    #+#             */
-/*   Updated: 2023/10/17 17:46:21 by caqueiro         ###   ########.fr       */
+/*   Created: 2023/10/18 20:27:51 by caqueiro          #+#    #+#             */
+/*   Updated: 2023/10/18 20:27:53 by caqueiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;
+	size_t	j;
 
-	if (!dest || !src)
-		return (NULL);
 	i = 0;
-	while (i < n)
-	{
-		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+	j = 0;
+	while (dst[i])
 		i++;
-	}
-	return (dest);
+	while (src[j] && j + 1 < size)
+		dst[i++] = src[j++];
+	dst[i + j] = '\0';
+	return (i + j);
 }
 
 /*int	main(void)
 {
-	char dest[50];
-	char src[50] = "GeeksForGeeks is for programming geeks.";
-	ft_memcpy(dest, src, 10);
+	char dest[10] = "oi ";
+	char src[8] = "abc";
+	ft_strlcat(dest, src, 3);
 	printf("%s", dest);
 }*/
