@@ -1,47 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: caqueiro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 22:30:50 by caqueiro          #+#    #+#             */
-/*   Updated: 2023/10/18 22:30:52 by caqueiro         ###   ########.fr       */
+/*   Created: 2023/10/19 17:55:24 by caqueiro          #+#    #+#             */
+/*   Updated: 2023/10/19 17:55:25 by caqueiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	size_t		i;
-	size_t		p;
 	int			f;
 
-	i = 0;
-	p = 0;
 	f = 0;
+	i = 0;
 	while (s[i])
 	{
 		if (s[i] == c)
 		{
-			p = i;
+			return ((char *)&s[i]);
 			f = 1;
 		}
 		i++;
 	}
 	if (!f)
-		return (NULL);
-	if (!c)
-		return ((char *)&s[i]);
-	return ((char *)&s[p]);
+		return (0);
+	return ((char *)&s[i]);
 }
 
-int	main(void)
+/*int	main(void)
 {
-	printf("%d\n", strrchr("oi,bb", 'b') == ft_strrchr("oi,bb", 'b'));
-	printf("%s\n", strrchr("oi,bb", 0));
-	printf("%d\n", strrchr("oi,bb", 'i') == ft_strrchr("oi,bb", 'i'));
-}
+	printf("%d\n", strchr("oi,bb", 'b') == ft_strchr("oi,bb", 'b'));
+	printf("%d\n", strchr("oi,bb", 0) == ft_strchr("oi,bb", 0));
+	printf("%d\n", strchr("oi,bb", 'i') == ft_strchr("oi,bb", 'i'));
+}*/
