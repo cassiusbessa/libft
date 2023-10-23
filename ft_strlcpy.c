@@ -11,13 +11,12 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 
-	if (!dst || !size)
+	if (!dst)
 		return (0);
 	i = 0;
 	while (i + 1 < size && src[i])
@@ -31,11 +30,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 		i++;
 	return (i);
 }
-
-/*int	main(void)
-{
-	char dest[8];
-	char src[8] = "GeeksFor";
-	ft_strlcpy(dest, src, 10);
-	printf("%s", dest);
-}*/

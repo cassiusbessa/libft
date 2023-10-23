@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
 char	*ft_strrchr(const char *s, int c)
 {
@@ -32,16 +30,16 @@ char	*ft_strrchr(const char *s, int c)
 		}
 		i++;
 	}
-	if (!f)
-		return (NULL);
 	if (!c)
 		return ((char *)&s[i]);
+	if (!f)
+		return (NULL);
 	return ((char *)&s[p]);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	printf("%d\n", strrchr("oi,bb", 'b') == ft_strrchr("oi,bb", 'b'));
-	printf("%s\n", strrchr("oi,bb", 0));
+	printf("%d\n", strrchr("oi,bb", 0) == ft_strrchr("oi,bb", 0));
 	printf("%d\n", strrchr("oi,bb", 'i') == ft_strrchr("oi,bb", 'i'));
-}
+}*/

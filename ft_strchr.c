@@ -15,22 +15,19 @@
 char	*ft_strchr(const char *s, int c)
 {
 	size_t		i;
-	int			f;
 
-	f = 0;
 	i = 0;
 	while (s[i])
 	{
 		if (s[i] == c)
 		{
 			return ((char *)&s[i]);
-			f = 1;
 		}
 		i++;
 	}
-	if (!f)
-		return (0);
-	return ((char *)&s[i]);
+	if (!c)
+		return ((char *)&s[i]);
+	return (0);
 }
 
 /*int	main(void)
