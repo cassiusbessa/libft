@@ -5,10 +5,10 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: caqueiro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 15:03:46 by caqueiro          #+#    #+#             */
-/*   Updated: 2023/10/20 19:39:21 by caqueiro         ###   ########.fr       */
+/*   Created: 2023/10/24 15:23:55 by caqueiro          #+#    #+#             */
+/*   Updated: 2023/10/24 15:23:59 by caqueiro         ###   ########.fr       */
 /*                                                                            */
-/* *******************************************************************ma******* */
+/* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
@@ -31,8 +31,8 @@ char		*ft_strrchr(const char *s, int c);
 size_t		ft_strlen(const char *s);
 size_t		ft_strlcpy(char *dst, const char *src, size_t size);
 size_t		ft_strlcat(char *dst, const char *src, size_t size);
-char		*ft_strdup(const char *s);
 char		*ft_strnstr(const char *big, const char *little, size_t len);
+char		*ft_strdup(const char *s);
 void		*ft_memset(void *s, int c, size_t n);
 void		ft_bzero(void *s, size_t n);
 void		*ft_memchr(const void *s, int c, size_t n);

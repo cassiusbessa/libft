@@ -15,18 +15,18 @@
 char	*ft_strdup(const char *src)
 {
 	char	*dup;
-	int	i;
+	int		i;
 
-	i = 0;	
-	while (dup[i])
-		i++;
 	i = 0;
-	dup = malloc((i * sizeof (char)) + 1);
+	while (src[i])
+		i++;
+	dup = (char *)malloc((i * sizeof (char)) + 1);
 	if (!dup)
 	{
 		free(dup);
 		return (NULL);
 	}
+	i = 0;
 	while (src[i])
 	{
 		dup[i] = src[i];
@@ -35,3 +35,8 @@ char	*ft_strdup(const char *src)
 	dup[i] = '\0';
 	return (dup);
 }
+
+/*int	main(void)
+{
+	printf("%s", ft_strdup(""));
+}*/
