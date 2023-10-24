@@ -14,12 +14,22 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
+	size_t	i;
 	void	*m;
 
+	i = 0;
 	m = malloc(nmemb * size);
 	if (!m)
-		return (m);
-	while (--nmemb)
-		((char *)m)[nmemb] = 0;
+		return (0);
+	while (i < (nmemb * size))
+		((char *)m)[i++] = 0;
 	return (m);
 }
+
+/*int	main(void)
+{
+	void	*c;
+	
+	c = ft_calloc(10, 1);
+	printf("%ld", sizeof (c));
+}*/
