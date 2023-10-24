@@ -16,8 +16,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 
-	if (!dst)
-		return (0);
 	i = 0;
 	while (i + 1 < size && src[i])
 	{
@@ -30,3 +28,11 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 		i++;
 	return (i);
 }
+
+/*#include <bsd/string.h>
+#include <stdio.h>
+int	main(void)
+{
+	char b[0xF] = "nyan !";
+	printf("%ld", strlcpy(((void*)0), ((void*)0), 10));
+}*/
