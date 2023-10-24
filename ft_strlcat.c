@@ -20,13 +20,15 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 
 	i = 0;
 	j = 0;
-	while (dst[i])
-		i++;
 	while (src[j])
 		j++;
-	t = i + j;
 	if (size <= i)
-		return (size + j);
+		return (j + size);
+	while (dst[i])
+		i++;
+	if (size <= i)
+		return (j + size);
+	t = i + j;
 	j = 0;
 	while (src[j] && i < (size - 1))
 		dst[i++] = src[j++];
@@ -34,35 +36,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	return (t);
 }
 
-/*size_t	ft_strlcat(char *dst, const char *src, size_t size)
-{
-	size_t	d;
-	size_t	i;
-	size_t	total;
-
-	if (size <= ft_strlen(dst))
-		return (size + ft_strlen(src));
-	d = ft_strlen(dst);
-	total = d + ft_strlen(src);
-	i = 0;
-	while (src[i] != '\0' && d < (size - 1))
-	{
-		dst[d] = src[i];
-		d++;
-		i++;
-	}
-	dst[d] = '\0';
-	return (total);
-}
-
-#include <bsd/string.h>
+/*#include <bsd/string.h>
 #include <stdio.h>
 int	main(void)
 {
-	char	*dest;
-	if (!(dest = (char *)malloc(sizeof(*dest) * 15)))
-		return (0);
-	memset(dest, 'r', 15);
-	printf("%ld\n", ft_strlcat(dest, "lorem ipsum dolor sit amet", 5));
-	printf("%s", dest);
+	char b[0xF] = "nyan !";
+	printf("%ld", ft_strlcat(((void*)0), b, 2));
 }*/

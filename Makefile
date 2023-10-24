@@ -22,7 +22,8 @@ SRCS	= ft_isalpha.c\
 	  ft_strnstr.c\
 	  ft_atoi.c\
 	  ft_calloc.c\
-	  ft_strdup.c
+	  ft_strdup.c\
+	  ft_substr.c
 	  
 OBJS	= ${SRCS:.c=.o}
 
@@ -40,6 +41,10 @@ $(NAME):	${OBJS}
 		ar -rvs ${NAME} ${OBJS}
 
 all:		$(NAME)
+
+so:
+		$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
+		gcc -nostartfiles -shared -o libft.so $(OBJS)
 
 clean:
 	${RM} ${OBJS}
