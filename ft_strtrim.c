@@ -6,11 +6,11 @@
 /*   By: caqueiro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 22:12:57 by caqueiro          #+#    #+#             */
-/*   Updated: 2023/10/24 22:12:59 by caqueiro         ###   ########.fr       */
+/*   Updated: 2023/10/25 15:22:22 by caqueiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+/*#include "libft.h"
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -21,5 +21,5 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (s1[i++])
 	{
 		if (s1[i] == 	
-	
+*/	
 
