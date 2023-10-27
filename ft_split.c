@@ -31,8 +31,7 @@ static int	count_big_array(char const *s, char c)
 			count++;
 		i++;
 	}
-	return (count + 1);	
-		
+	return (count + 1);
 }
 
 static int	count_little_array(char const *s, char c)
@@ -45,40 +44,46 @@ static int	count_little_array(char const *s, char c)
 	return (i);
 }
 
+static	void	fill_matrix(char **matrix, int size, const char *s, char c)
+{
+	int	ex;
+	int	skip;
+
+	ex = 0;
+	while (size && *s)
+	{
+		if (*s != c)
+		{
+			skip = count_little_array(s, c);
+			matrix[ex] = ft_substr(s, 0, skip);
+			if (!matrix[ex])
+			{
+				while (ex)
+					free(matrix[ex--]);
+				free(matrix);
+				return ;
+			}
+			s += skip;
+			size--;
+			ex++;
+			continue ;
+		}
+		s++;
+	}
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**split;
-	int	q;
-	int	ex;
-	int	skip;
-	int	i;
+	int		q;
 
 	if (!s)
 		return (NULL);
 	q = count_big_array(s, c);
-	ex = 0;
-	i = 0;
 	split = ft_calloc(q, sizeof (char *));
 	if (!split)
 		return (NULL);
-	while (q && s[i])
-	{
-		if (s[i] != c)
-		{
-			skip = count_little_array(&s[i], c);
-			split[ex] = ft_substr(&s[i], 0, skip);
-			if (!split[ex])
-			{
-				free(split[ex]);
-				return (NULL);
-			}
-			i = i + skip;
-			q--;
-			ex++;
-			continue ;
-		}
-		i++;
-	}
+	fill_matrix(split, q, s, c);
 	return (split);
 }
 
