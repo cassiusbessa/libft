@@ -20,7 +20,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 static int	count_big_array(char const *s, char c)
 {
-	printf("entrie aqui");
 	int	i;
 	int	count;
 
@@ -48,25 +47,31 @@ static int	count_little_array(char const *s, char c)
 
 char	**ft_split(char const *s, char c)
 {
-	printf("entrie aqui");
-	char	*t;
 	char	**split;
 	int	q;
 	int	ex;
 	int	skip;
 	int	i;
 
-	t = ft_strtrim(s, &c);
-	q = count_big_array(t, c);
+	if (!s)
+		return (NULL);
+	q = count_big_array(s, c);
 	ex = 0;
 	i = 0;
 	split = ft_calloc(q, sizeof (char *));
-	while (q && t[i])
+	if (!split)
+		return (NULL);
+	while (q && s[i])
 	{
-		if (t[i] != c)
+		if (s[i] != c)
 		{
-			skip = count_little_array(&t[i], c);
-			split[ex] = ft_substr(&t[i], 0, skip);
+			skip = count_little_array(&s[i], c);
+			split[ex] = ft_substr(&s[i], 0, skip);
+			if (!split[ex])
+			{
+				free(split[ex]);
+				return (NULL);
+			}
 			i = i + skip;
 			q--;
 			ex++;
@@ -74,21 +79,17 @@ char	**ft_split(char const *s, char c)
 		}
 		i++;
 	}
-	free(t);
 	return (split);
 }
 
-int	main(void)
+/*int	main(void)
 {
-	printf("maiiiiiiiin");
 	int	i = 0;
 	char	**split = ft_split("        oi,bb", ' ');
-	
-	//printf("%s", split[0]);
-	/*while (i < 1)
+	while (i < 1)
 	{
 		printf("%s", split[i]);
 		i++;
-	}*/
+	}
 	free(split);
-}
+}*/

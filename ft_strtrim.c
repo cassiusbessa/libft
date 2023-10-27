@@ -35,10 +35,26 @@ char	*ft_strtrim(char const *s1, char const *set)
 		e--;
 	return (ft_substr(s1, i, (e - i) + 1));
 }
+
+/*char	*ft_strtrim(char const *s1, char const *set)
+{
+	size_t	size_cut;
+	char	*result;
+
+	if (!s1 || !set)
+		return (0);
+	while (*s1 && ft_strchr(set, *s1))
+		s1++;
+	size_cut = ft_strlen(s1);
+	while (*s1 && ft_strchr(set, s1[size_cut]))
+		size_cut--;
+	result = ft_substr(s1, 0, size_cut + 1);
+	return (result);
+}*/
 /*int main(void)
 {
 	char *s1 = "";
 	char *s2 = "";
-	char *ret = ft_strtrim(s1, s2);
-    printf("%s", ret);
+	char *ret = ft_strtrim("          oi,bb", " ");
+	printf("%s", ret);
 }*/
