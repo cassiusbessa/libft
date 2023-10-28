@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <unistd.h>
 
 void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strtrim(char const *s1, char const *set);
