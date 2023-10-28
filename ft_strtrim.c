@@ -11,50 +11,29 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 char	*ft_strchr(const char *s, int c);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	i;
-	size_t	e;
-
-	i = 0;
-	e = 0;
-	if (s1 == NULL || set == NULL)
-		return (NULL);
-	while (s1[i] && ft_strchr(set, s1[i]))
-		i++;
-	e = i;
-	while (s1[e])
-		e++;
-	if (e == i)
-		return (ft_strdup(""));
-	while (ft_strchr(set, s1[e]))
-		e--;
-	return (ft_substr(s1, i, (e - i) + 1));
-}
-
-/*char	*ft_strtrim(char const *s1, char const *set)
-{
-	size_t	size_cut;
-	char	*result;
+	size_t	len;
 
 	if (!s1 || !set)
-		return (0);
+		return (NULL);
 	while (*s1 && ft_strchr(set, *s1))
 		s1++;
-	size_cut = ft_strlen(s1);
-	while (*s1 && ft_strchr(set, s1[size_cut]))
-		size_cut--;
-	result = ft_substr(s1, 0, size_cut + 1);
-	return (result);
-}*/
+	len = ft_strlen(s1);
+	while (*s1 && ft_strchr(set, s1[len]))
+		len--;
+	return (ft_substr(s1, 0, len + 1));
+}
+
 /*int main(void)
 {
 	char *s1 = "";
-	char *s2 = "";
+	char *s2 = "dani";
 	char *ret = ft_strtrim("          oi,bb", " ");
 	printf("%s", ret);
 }*/
