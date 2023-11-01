@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caqueiro <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: caqueiro <caqueiro@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/24 22:12:57 by caqueiro          #+#    #+#             */
-/*   Updated: 2023/10/25 15:22:22 by caqueiro         ###   ########.fr       */
+/*   Created: 2023/11/01 15:51:32 by caqueiro          #+#    #+#             */
+/*   Updated: 2023/11/01 15:51:38 by caqueiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char	*ft_strchr(const char *s, int c);
 char	*ft_substr(char const *s, unsigned int start, size_t len);

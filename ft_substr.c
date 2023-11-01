@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caqueiro <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: caqueiro <caqueiro@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/24 15:40:43 by caqueiro          #+#    #+#             */
-/*   Updated: 2023/10/24 15:40:45 by caqueiro         ###   ########.fr       */
+/*   Created: 2023/11/01 15:51:49 by caqueiro          #+#    #+#             */
+/*   Updated: 2023/11/01 15:52:02 by caqueiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <unistd.h>
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -40,4 +38,4 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		sub[i++] = s[start++];
 	sub[i] = '\0';
 	return (sub);
-}	
+}
